@@ -8,7 +8,7 @@
             "type": "node",
             "request": "launch",
             "name": "Launch Program",
-            "program": "${workspaceFolder}/src/snap.js"
+            "program": "${workspaceFolder}/src/snap_engine.js"
         }
     ]
 }

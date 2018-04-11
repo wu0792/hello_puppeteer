@@ -1,0 +1,27 @@
+{
+    "screen_width": 1366,
+    "screen_height": 768,
+    "steps": [
+        {
+            "id": 1,
+            "title": "打开页面",
+            "action": "goto",
+            "params": "http://www.baidu.com",
+            "returnValue": ""
+        },
+        {
+            "id": 2,
+            "title": "等待加载完成",
+            "action": "waitForSelector",
+            "params": ".header-wrapper .loading.finish",
+            "returnValue": ""
+        },
+        {
+            "id": 3,
+            "title": "hover航司筛选项",
+            "action": "waitForSelector",
+            "params": "ul.filter-bd>li:nth-child(3)",
+            "returnValue": ""
+        }
+    ]
+}

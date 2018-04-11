@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/wu0792/hello_puppeteer#readme",
   "dependencies": {
+    "fs-readfile-promise": "^3.0.1",
     "puppeteer": "^1.2.0"
   }
 }
