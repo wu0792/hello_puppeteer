@@ -1,0 +1,171 @@
+{
+    "steps": [
+        {
+            "title": "打开页面",
+            "group": "flow",
+            "subGroup": "goto",
+            "ctorParams": [
+                "page"
+            ],
+            "execParams": [
+                "''"
+            ]
+        },
+        {
+            "title": "等待加载完成",
+            "group": "flow",
+            "subGroup": "wait",
+            "ctorParams": [
+                "page",
+                "'selector'"
+            ],
+            "execParams": [
+                "'.header-wrapper .loading.finish'"
+            ]
+        },
+        {
+            "title": "等待加载并查找运价展开按钮",
+            "group": "flow",
+            "subGroup": "wait",
+            "ctorParams": [
+                "page",
+                "'selector'"
+            ],
+            "execParams": [
+                "'.flight-action .btn.btn-book'"
+            ],
+            "returnAs": "btnExpand"
+        },
+        {
+            "title": "点击运价展开按钮",
+            "group": "action",
+            "subGroup": "click",
+            "ctorParams": [
+                "btnExpand"
+            ],
+            "execParams": []
+        },
+        {
+            "title": "查找预定按钮",
+            "group": "flow",
+            "subGroup": "wait",
+            "ctorParams": [
+                "page",
+                "'selector'"
+            ],
+            "execParams": [
+                "'.flight-seats .btn.btn-book'"
+            ],
+            "returnAs": "btnBook"
+        },
+        {
+            "title": "点击预定按钮",
+            "group": "action",
+            "subGroup": "click",
+            "ctorParams": [
+                "btnBook"
+            ],
+            "execParams": []
+        },
+        {
+            "title": "等待加载登录弹窗",
+            "group": "flow",
+            "subGroup": "wait",
+            "ctorParams": [
+                "page",
+                "'func'"
+            ],
+            "execParams": [
+                "'document.querySelector(\".login_popup\")'"
+            ]
+        },
+        {
+            "title": "查找登录用户名文本框",
+            "group": "flow",
+            "subGroup": "wait",
+            "ctorParams": [
+                "page",
+                "'func'"
+            ],
+            "execParams": [
+                "'document.querySelector(\"#sso_txtUid\")'"
+            ],
+            "returnAs": "inputUid"
+        },
+        {
+            "title": "点击登录用户名文本框以得到焦点",
+            "group": "action",
+            "subGroup": "click",
+            "ctorParams": [
+                "inputUid"
+            ],
+            "execParams": []
+        },
+        {
+            "title": "录入登录用户名",
+            "group": "action",
+            "subGroup": "type",
+            "ctorParams": [
+                "inputUid"
+            ],
+            "execParams": [
+                "''"
+            ]
+        },
+        {
+            "title": "查找登录密码文本框",
+            "group": "flow",
+            "subGroup": "wait",
+            "ctorParams": [
+                "page",
+                "'func'"
+            ],
+            "execParams": [
+                "`document.querySelector('#sso_txtPwd')`"
+            ],
+            "returnAs": "inputPwd"
+        },
+        {
+            "title": "点击登录密码文本框以得到焦点",
+            "group": "action",
+            "subGroup": "click",
+            "ctorParams": [
+                "inputPwd"
+            ],
+            "execParams": []
+        },
+        {
+            "title": "录入登录密码",
+            "group": "action",
+            "subGroup": "type",
+            "ctorParams": [
+                "inputPwd"
+            ],
+            "execParams": [
+                "''"
+            ]
+        },
+        {
+            "title": "查找登录按钮",
+            "group": "flow",
+            "subGroup": "query",
+            "ctorParams": [
+                "page"
+            ],
+            "execParams": [
+                "'#sso_btnSubmit'"
+            ],
+            "returnAs": "btnLogin"
+        },
+        {
+            "title": "点击登录按钮，跳到填写页",
+            "group": "action",
+            "subGroup": "click",
+            "ctorParams": [
+                "btnLogin"
+            ],
+            "execParams": []
+        }
+    ],
+    "template": "./src/template/01.js"
+}
