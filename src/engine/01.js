@@ -17,10 +17,12 @@
             theSubGroup = theGroup[subGroup],
             theReturn = returnAs ? `const ${returnAs} = ` : '',
             theStepCtorCode = `const step${index} = new ${theSubGroup}(${flatCtorParams})`,
-            theStepExecCode = `${theReturn}await step${index}.doExecute([${flatExecParams}])`
+            theStepExecCode = `${theReturn}await step${index}.doExecute([${flatExecParams}])`,
+            log = `console.log('step${index}:${title}')`
 
         output.push(theStepCtorCode)
-        output.push(theStepExecCode + '\n')
+        output.push(theStepExecCode)
+        output.push(log + '\n')
     });
 
     const templateContent = await readFilePromise(path.join(process.cwd(), template), { encoding: 'utf8' }),

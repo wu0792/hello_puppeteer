@@ -73,10 +73,10 @@
             "subGroup": "wait",
             "ctorParams": [
                 "page",
-                "'func'"
+                "'selector'"
             ],
             "execParams": [
-                "'document.querySelector(\".login_popup\")'"
+                "'#sso_memberlogin'"
             ]
         },
         {
@@ -85,10 +85,10 @@
             "subGroup": "wait",
             "ctorParams": [
                 "page",
-                "'func'"
+                "'selector'"
             ],
             "execParams": [
-                "'document.querySelector(\"#sso_txtUid\")'"
+                "'#sso_txtUid'"
             ],
             "returnAs": "inputUid"
         },
