@@ -4,7 +4,8 @@ const HoverAction = require('../action/hover')
 const ClickAction = require('../action/click')
 const TypeAction = require('../action/type')
 const QueryFlow = require('../flow/query')
-const puppeteer = require('puppeteer');
+const puppeteer = require('puppeteer')
+const expect = require('expect-puppeteer');
 
 (async () => {
     const browser = await puppeteer.launch({

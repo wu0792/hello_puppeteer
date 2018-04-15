@@ -61,6 +61,10 @@ es6-promisify@^5.0.0:
   dependencies:
     es6-promise "^4.0.3"
 
+expect-puppeteer@^2.3.0:
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/expect-puppeteer/-/expect-puppeteer-2.3.0.tgz#85361bda97c2017c1451cfa4460a9c507a9da7d7"
+
 extract-zip@^1.6.5:
   version "1.6.6"
   resolved "https://registry.yarnpkg.com/extract-zip/-/extract-zip-1.6.6.tgz#1290ede8d20d0872b429fd3f351ca128ec5ef85c"
@@ -207,6 +211,10 @@ rimraf@^2.6.1:
 safe-buffer@~5.1.0, safe-buffer@~5.1.1:
   version "5.1.1"
   resolved "https://registry.yarnpkg.com/safe-buffer/-/safe-buffer-5.1.1.tgz#893312af69b2123def71f57889001671eeb2c853"
+
+shortid@^2.2.8:
+  version "2.2.8"
+  resolved "https://registry.yarnpkg.com/shortid/-/shortid-2.2.8.tgz#033b117d6a2e975804f6f0969dbe7d3d0b355131"
 
 string_decoder@~1.1.1:
   version "1.1.1"

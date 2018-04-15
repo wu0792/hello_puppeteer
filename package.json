@@ -18,7 +18,11 @@
   },
   "homepage": "https://github.com/wu0792/hello_puppeteer#readme",
   "dependencies": {
+    "expect-puppeteer": "^2.3.0",
     "fs-readfile-promise": "^3.0.1",
     "puppeteer": "^1.2.0"
+  },
+  "devDependencies": {
+    "shortid": "^2.2.8"
   }
 }
