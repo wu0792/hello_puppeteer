@@ -7,9 +7,15 @@ const QueryFlow = require('../flow/query')
 const puppeteer = require('puppeteer')
 const cp = require('child_process')
 const shortid = require('shortid')
+const readFilePromise = require('fs-readfile-promise')
+const path = require('path')
 const expect = require('expect-puppeteer');
 
 (async () => {
+    const configText = await readFilePromise('C:\\Src\\hello_puppeteer\\src\\pwd.json', { encoding: 'utf8' }),
+        configJson = JSON.parse(configText),
+        { url, userId, pwd } = configJson.social
+
     const browser = await puppeteer.launch({
         headless: true,
         slowMo: 20
@@ -21,11 +27,11 @@ const expect = require('expect-puppeteer');
     await page.setViewport({ width: 1366, height: 768 })
 
     //打开登录页面
-    await page.goto('')
+    await page.goto(url)
 
     //填写登录用户名/密码
-    await expect(page).toFill('.login-con .login-input[name="AAC002"]', '', { timeout: TIME_OUT })
-    await expect(page).toFill('.login-con .login-input[name="CAC222"]', '', { timeout: TIME_OUT })
+    await expect(page).toFill('.login-con .login-input[name="AAC002"]', userId, { timeout: TIME_OUT })
+    await expect(page).toFill('.login-con .login-input[name="CAC222"]', pwd, { timeout: TIME_OUT })
 
     //保存校验码
     const codeImgName = shortid.generate(),
@@ -71,6 +77,6 @@ const expect = require('expect-puppeteer');
     const personalBalanceSelector = 'table:nth-child(6) tr:nth-child(2) input'
     const personalBalanceElement = await firstFrame.waitForSelector(personalBalanceSelector)
     const personalBalanceValue = await firstFrame.$eval(personalBalanceSelector, el => el.value)
-    debugger
 
+    console.log(`余额: ${personalBalanceValue}`)
 })()
